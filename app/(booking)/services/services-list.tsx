@@ -1,6 +1,7 @@
 'use client'
 
 import { Section } from "@/components/section"
+import { labels } from "@/lib/constants"
 import { useRedirectHome } from "@/lib/hooks/use-redirect-home"
 import { toggleBaggage } from "@/lib/store/bookingSlice"
 import { useAppSelector, useAppDispatch } from "@/lib/store/hooks"
@@ -37,7 +38,7 @@ export const ServicesList = () => {
                                     className={clsx('button-secondary', passenger.baggage?.checkedBaggage ? 'bg-green-500' : '')}
                                     onClick={handleUpdateBaggage(passenger.id, 'checkedBaggage')}
                                 >
-                                    Checked Baggage
+                                    {labels.checkedBaggage}
                                 </button>
                             )}
 
@@ -46,7 +47,7 @@ export const ServicesList = () => {
                                 className={clsx('button-secondary', passenger.baggage?.cabinBaggage ? 'bg-green-500' : '')}
                                 onClick={handleUpdateBaggage(passenger.id, 'cabinBaggage')}
                             >
-                                Cabin Baggage
+                                {labels.cabinBaggage}
                             </button>
 
                         </div>

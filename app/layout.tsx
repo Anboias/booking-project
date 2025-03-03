@@ -1,7 +1,5 @@
 import { Inter } from "next/font/google";
 import StoreProvider from "@/lib/store/StoreProvider";
-import OrbitProvider from "@/lib/orbit/orbit-provider";
-import StyledComponentsRegistry from '@/lib/orbit/registry';
 import React from "react";
 
 import "@/lib/globals.css";

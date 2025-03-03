@@ -34,31 +34,30 @@ export const DatePicker = (props: Props) => {
         onChange(date);
     }
 
-    const handleInputChange = (e: any) => {
-        setInputValue(e.target.value);
-    }
-
-    const handleKeyDown = (e: any) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const date = new Date(inputValue || '');
-            if (!isNaN(date.getTime())) {
-                handleChange(date);
-            }
-        }
-    }
-
     return (
         <div className="flex flex-col gap-2">
             <label htmlFor="date-picker">{label}</label>
             <ReactDatePicker
                 selected={startDate}
-                onChange={handleChange}
-                onChangeRaw={handleInputChange}
                 maxDate={today}
                 value={inputValue || undefined}
                 dateFormat="yyyy-MM-dd"
-                onKeyDown={handleKeyDown}
+                onChange={handleChange}
+                onChangeRaw={e => {
+                    if (!e?.target || !(e.target instanceof HTMLInputElement)) return;
+                    setInputValue(e.target.value);
+                }}
+                onKeyDown={(e) => {
+                    if (e.key !== 'Enter') {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    const date = new Date(inputValue || '');
+                    if (!isNaN(date.getTime())) {
+                        handleChange(date);
+                    }
+                }}
             />
         </div>
     );

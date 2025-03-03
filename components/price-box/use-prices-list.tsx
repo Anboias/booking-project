@@ -1,7 +1,6 @@
 'use client'
 
 import { Passenger } from "@/lib/schema";
-import { useAppSelector } from "@/lib/store/hooks";
 import { getPrice, PricingType } from "@/lib/get-price";
 import { useEffect } from "react";
 import { useState } from "react";

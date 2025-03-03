@@ -3,7 +3,7 @@
 import { SelectHTMLAttributes } from "react";
 import clsx from "clsx";
 
-export const Select = ({ className, label, error, options, ...props }: SelectHTMLAttributes<HTMLSelectElement> & { label: string, error?: string, options: string[] }) => {
+export const Select = ({ className, label, options, ...props }: SelectHTMLAttributes<HTMLSelectElement> & { label: string, options: string[] }) => {
     return (
         <div className="flex flex-col gap-2">
             <label htmlFor={props.id}>{label}</label>

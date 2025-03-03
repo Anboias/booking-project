@@ -39,12 +39,6 @@ export const bookingSlice = createSlice({
         (passenger: Partial<Passenger>) => passenger.id !== action.payload
       );
     },
-    saveDraftPassengers: (
-      state,
-      action: PayloadAction<Partial<Passenger>[]>
-    ) => {
-      state.passengersDraft = action.payload;
-    },
     updatePassengerDraft: (
       state,
       action: PayloadAction<Partial<Passenger>>
@@ -94,7 +88,6 @@ export const {
   addPassengerDraft,
   removePassengerDraft,
   savePassengers,
-  saveDraftPassengers,
   updatePassengerDraft,
   toggleBaggage,
 } = bookingSlice.actions;

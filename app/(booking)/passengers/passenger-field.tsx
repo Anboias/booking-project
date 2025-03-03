@@ -79,8 +79,8 @@ export const PassengerField = (props: Props) => {
             )}
 
             {/* Delete this passenger */}
-            <button onClick={onDelete} type="button" role="button" className="button-alert">
-                Delete
+            <button onClick={onDelete} type="button" role="button" className="button-alert mt-auto">
+                X
             </button>
         </div>
     )

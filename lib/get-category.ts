@@ -11,7 +11,7 @@ export const getAppropriateCategoryByAge = (date: Date | null) => {
   if (age === null) return null;
 
   return Object.entries(AGE_LIMITS).find(
-    ([_, [from, to]]) => age >= from && age <= to
+    ([, [from, to]]) => age >= from && age <= to
   )?.[0] as PassengerCategory;
 };
 

@@ -3,6 +3,7 @@
 import { useAppSelector } from "@/lib/store/hooks";
 import { currency, PricingType } from "@/lib/get-price";
 import { getTotal, PriceEntry, usePricesList } from "./use-prices-list";
+import { labels } from "@/lib/constants";
 
 export const PriceBox = () => {
     const { passengers } = useAppSelector(state => state.booking);
@@ -14,7 +15,7 @@ export const PriceBox = () => {
         <ul>
             {Object.entries(groupedPrices).map(([priceType, price]) => (
                 <li key={priceType}>
-                    <p>{price.length} x {priceType} - {getTotal(price)} {currency}</p>
+                    <p>{price.length} x {labels[priceType]} - {getTotal(price)} {currency}</p>
                 </li>
             ))}
 

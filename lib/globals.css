@@ -10,7 +10,7 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -21,4 +21,32 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  @apply border border-gray-500 px-4 py-2 rounded-md cursor-pointer h-auto;
+}
+
+.button-primary {
+  @apply border bg-gray-900 text-white  border-gray-500 px-4 py-2 rounded-md cursor-pointer;
+}
+
+.button-primary:disabled {
+  @apply bg-gray-500 cursor-not-allowed;
+}
+
+.button-secondary {
+  @apply border border-gray-500 px-4 py-2 rounded-md cursor-pointer;
+}
+
+.button-secondary:disabled {
+  @apply bg-gray-500 cursor-not-allowed;
+}
+
+.button-alert {
+  @apply border text-red-500 border-red-500 px-4 py-2 rounded-md cursor-pointer;
+}
+
+input {
+  @apply border border-gray-500 px-4 py-2 rounded-md;
 }

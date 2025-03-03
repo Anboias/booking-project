@@ -1,13 +1,12 @@
-import { SectionTitle } from "@/components/section-title";
+import { Section } from "@/components/section";
+import { ServicesList } from "./services-list";
 
 export default function ServicesPage() {
     return (
         <>
-            <SectionTitle title="Services" />
+            <Section.Title title="Services" />
+            <ServicesList />
         </>
     );
 }
 
-export async function getStaticProps() {
-    return { props: { title: 'Services' } }
-}

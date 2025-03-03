@@ -1,20 +1,12 @@
-import { SectionTitle } from "@/components/section-title";
+import { Section } from "@/components/section";
+import { PassengersList } from "./passengers-list";
 
 export default function PassengersPage() {
     return (
-        <div>
-            <SectionTitle title="Passengers" />
-
-            <div>
-                <div>
-                    <div>
-                        <div>
-                            asdas
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <>
+            <Section.Title title="Passengers" />
+            <PassengersList />
+        </>
     );
 }
 
